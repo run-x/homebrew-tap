@@ -5,21 +5,21 @@
 class Cloudgrep < Formula
   desc "Cloudgrep is an asset explorer for cloud resources"
   homepage "https://github.com/run-x/cloudgrep"
-  version "0.0.38"
+  version "0.0.39"
   license "Apache"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/run-x/cloudgrep/releases/download/v0.0.38/cloudgrep_0.0.38_darwin_amd64.tar.gz"
-      sha256 "16c07f4bfa1ab2eda0ab3023464c53ded0fb5c0d1f4ab7377157150be951da3e"
+      url "https://github.com/run-x/cloudgrep/releases/download/v0.0.39/cloudgrep_0.0.39_darwin_amd64.tar.gz"
+      sha256 "fd5c92c297a8ce41a13cf4ca27d05071c225dc7f604871f37f57f324e40f4460"
 
       def install
         bin.install "cloudgrep"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/run-x/cloudgrep/releases/download/v0.0.38/cloudgrep_0.0.38_darwin_arm64.tar.gz"
-      sha256 "828b92bc033420dbfc4f99f973d61d504d6d250d1e1348a1541937ff81b80b5f"
+      url "https://github.com/run-x/cloudgrep/releases/download/v0.0.39/cloudgrep_0.0.39_darwin_arm64.tar.gz"
+      sha256 "4ee2974937cea0f5742bac66fdc86fd5c0a67ed42b9365bdca046cad7cf4acac"
 
       def install
         bin.install "cloudgrep"
@@ -28,17 +28,17 @@ class Cloudgrep < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/run-x/cloudgrep/releases/download/v0.0.38/cloudgrep_0.0.38_linux_amd64.tar.gz"
-      sha256 "c7f9493d41f7f763ec93a315c9691f25407e9796a2d23a7d2709a284bab1e525"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/run-x/cloudgrep/releases/download/v0.0.39/cloudgrep_0.0.39_linux_arm64.tar.gz"
+      sha256 "fec56d4234e7c67c6d893a6210ec64cbf4179cbdea49d15940d37c13fdf3c027"
 
       def install
         bin.install "cloudgrep"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/run-x/cloudgrep/releases/download/v0.0.38/cloudgrep_0.0.38_linux_arm64.tar.gz"
-      sha256 "19714f3ec2bedfbf2bc3d8ef574404e3fb1b7d619af4cb35c5641d8c1abb7e1c"
+    if Hardware::CPU.intel?
+      url "https://github.com/run-x/cloudgrep/releases/download/v0.0.39/cloudgrep_0.0.39_linux_amd64.tar.gz"
+      sha256 "a00f05b108a75a6c1400f55016c38b2bdb2740389fe1414def103abfc6a0d1cd"
 
       def install
         bin.install "cloudgrep"
